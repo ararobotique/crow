@@ -1944,7 +1944,7 @@ namespace crow
             }
 
         public:
-            std::string dump() const
+            std::string dump() const override
             {
                 std::string ret;
                 ret.reserve(estimate_length());

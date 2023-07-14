@@ -70,10 +70,10 @@ namespace crow
         {
             // Here we simply check that the candidate type starts with
             // a valid parent type, and has at least one character afterwards.
-            std::array<std::string, 10> valid_parent_types = {
+            std::array<std::string, 10> valid_parent_types = {{
               "application/", "audio/", "font/", "example/",
               "image/", "message/", "model/", "multipart/",
-              "text/", "video/"};
+              "text/", "video/"}};
             for (const std::string& parent : valid_parent_types)
             {
                 // ensure the candidate is *longer* than the parent,

@@ -23,7 +23,7 @@ namespace crow
             invalid_template_exception(const std::string& msg):
               msg("crow::mustache error: " + msg)
             {}
-            virtual const char* what() const throw()
+            virtual const char* what() const throw() override
             {
                 return msg.c_str();
             }
