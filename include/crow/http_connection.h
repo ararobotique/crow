@@ -337,9 +337,13 @@ namespace crow
                 res.code = 500;
             }
 
-            auto& status = statusCodes.find(res.code)->second;
-            buffers_.emplace_back(status.data(), status.size());
-
+            auto code = statusCodes.find(res.code);
+            if (code != statusCodes.end())
+            {
+                auto& status = code->second;
+                buffers_.emplace_back(status.data(), status.size());
+            }
+            
             if (res.code >= 400 && res.body.empty())
                 res.body = statusCodes[res.code].substr(9);
 
