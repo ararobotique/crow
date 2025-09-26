@@ -48,7 +48,7 @@ namespace crow
                     case '\r': ret += "\\r"; break;
                     case '\t': ret += "\\t"; break;
                     default:
-                        if (c >= 0 && c < 0x20)
+                        if (static_cast<unsigned char>(c) < 0x20)
                         {
                             ret += "\\u00";
                             auto to_hex = [](char c) {
