@@ -173,7 +173,7 @@ enum http_errno {
         unsigned int upgrade : 1;
 
         /** PUBLIC **/
-        void* data; /* A pointer to get hook to the "connection" or "socket" object */
+        void* data = nullptr; /* A pointer to get hook to the "connection" or "socket" object */
     };
 
 
